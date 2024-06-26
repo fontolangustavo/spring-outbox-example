@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Cpc33UBI
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    networks:
+      - db-network
+    healthcheck:
+      test: ["CMD-SHELL", "sqlcmd -U sa -P Cpc33UBI -Q 'SELECT 1'"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sa
+      - MONGO_INITDB_ROOT_PASSWORD=Cpc33UBI
+    ports:
+      - "27017:27017"
+    networks:
+      - db-network
+    volumes:
+      - mongo-data:/data/db
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+networks:
+  db-network:
+    driver: bridge
+volumes:
+  mongo-data:

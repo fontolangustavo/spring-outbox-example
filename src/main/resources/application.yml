@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-outbox-example
+  rabbitmq:
+    username: user
+    password: password
+    queue:
+      sqlserver:
+        name: product-manager.update.sqlserver
+      mongodb:
+        name: product-manager.update.mongodb
+    exchange:
+      name: product-manager.update
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1:1433;database=minishop;loginTimeout=30;trustServerCertificate=true
+    username: sa
+    password: Cpc33UBI
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
