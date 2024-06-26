@@ -8,12 +8,13 @@ import com.fontolan.springoutboxexample.models.Product;
 import com.fontolan.springoutboxexample.usecases.CreateProductUseCase;
 import com.fontolan.springoutboxexample.usecases.GetAllProductUseCase;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/v1/customer/products")
-@RestController
+@RestController("customer-products")
 public class ProductController {
     private final GetAllProductUseCase getAllProductUseCase;
     private final ProductMapper productMapper;

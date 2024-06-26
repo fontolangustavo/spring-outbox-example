@@ -8,7 +8,9 @@ import com.fontolan.springoutboxexample.usecases.mapper.ProductEntityMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GetAllProductUseCaseImpl implements GetAllProductUseCase {
     private final ProductRepository productRepository;
     private final ProductEntityMapper productEntityMapper;

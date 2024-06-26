@@ -5,7 +5,6 @@ import com.fontolan.springoutboxexample.controllers.partner.request.ProductReque
 import com.fontolan.springoutboxexample.models.Product;
 import org.springframework.stereotype.Component;
 
-@Component
 public interface CreateProductUseCase {
     public Product store(final Product product) throws JsonProcessingException;
 }
