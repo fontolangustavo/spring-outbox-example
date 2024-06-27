@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -25,4 +26,9 @@ public class ProductEntity implements Serializable {
     private ZonedDateTime createdAt;
     private ZonedDateTime updatedAt;
     private ZonedDateTime deletedAt;
+
+    @PrePersist
+    private void externalId() {
+        this.externalId = UUID.randomUUID().toString();
+    }
 }
