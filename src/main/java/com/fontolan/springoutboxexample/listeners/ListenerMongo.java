@@ -1,7 +1,6 @@
 package com.fontolan.springoutboxexample.listeners;
 
 import com.fontolan.springoutboxexample.configurations.DomainConfig;
-import com.fontolan.springoutboxexample.models.Product;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +13,8 @@ public class ListenerMongo {
     }
 
     @RabbitListener(queues = "${spring.rabbitmq.queue.mongodb.name}" )
-    public void receiveMessage(Product product) {
-        System.out.println("ListenerMongo - Subscriber: Hello, it is subscribe mongo. Received Product: " + product);
+    public void receiveMessage(Long id) {
+        System.out.println("ListenerMongo - Subscriber: Hello, it is subscribe mongo. Received Product Request Update: " + id);
         // Additional processing can be added here
     }
 }
