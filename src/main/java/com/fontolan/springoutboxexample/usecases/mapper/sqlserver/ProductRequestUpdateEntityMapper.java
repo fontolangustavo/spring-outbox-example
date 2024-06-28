@@ -1,4 +1,4 @@
-package com.fontolan.springoutboxexample.usecases.mapper;
+package com.fontolan.springoutboxexample.usecases.mapper.sqlserver;
 
 import com.fontolan.springoutboxexample.entities.sqlserver.ProductEntity;
 import com.fontolan.springoutboxexample.entities.sqlserver.ProductRequestUpdateEntity;

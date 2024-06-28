@@ -19,7 +19,10 @@ public class ListenerSQLServer {
     private final ProductRequestUpdateRepository productRequestUpdateRepository;
     private final ProductRepository productRepository;
 
-    public ListenerSQLServer(ProductRequestUpdateRepository productRequestUpdateRepository, ProductRepository productRepository) {
+    public ListenerSQLServer(
+            ProductRequestUpdateRepository productRequestUpdateRepository,
+            ProductRepository productRepository
+    ) {
         this.productRequestUpdateRepository = productRequestUpdateRepository;
         this.productRepository = productRepository;
     }
