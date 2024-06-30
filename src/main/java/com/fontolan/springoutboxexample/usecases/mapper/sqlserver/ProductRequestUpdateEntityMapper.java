@@ -19,7 +19,6 @@ public class ProductRequestUpdateEntityMapper {
         if (requestUpdate.getProduct() != null) {
             productRequestUpdate.setProduct(
                 Product.builder()
-                    .id(requestUpdate.getProduct().getId())
                     .externalId(requestUpdate.getProduct().getExternalId())
                     .name(requestUpdate.getProduct().getName())
                     .price(requestUpdate.getProduct().getPrice())
@@ -41,7 +40,6 @@ public class ProductRequestUpdateEntityMapper {
         if (requestUpdate.getProduct() != null) {
             productRequestUpdate.setProduct(
                 ProductEntity.builder()
-                    .id(requestUpdate.getProduct().getId())
                     .externalId(requestUpdate.getProduct().getExternalId())
                     .name(requestUpdate.getProduct().getName())
                     .price(requestUpdate.getProduct().getPrice())

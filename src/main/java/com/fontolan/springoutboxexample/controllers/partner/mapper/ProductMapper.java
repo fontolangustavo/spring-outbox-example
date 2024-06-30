@@ -16,7 +16,7 @@ public class ProductMapper {
 
     public ProductResponse toProductResponse(Product product) {
         return ProductResponse.builder()
-                .id(product.getId())
+                .id(product.getExternalId())
                 .name(product.getName())
                 .price(product.getPrice())
                 .build();

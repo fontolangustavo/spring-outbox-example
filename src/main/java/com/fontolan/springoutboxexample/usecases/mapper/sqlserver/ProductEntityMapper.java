@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class ProductEntityMapper {
     public Product toProduct(ProductEntity productEntity) {
         return Product.builder()
-                .id(productEntity.getId())
+                .id(productEntity.getId().toString())
                 .externalId(productEntity.getExternalId())
                 .name(productEntity.getName())
                 .price(productEntity.getPrice())
@@ -17,7 +17,7 @@ public class ProductEntityMapper {
 
     public ProductEntity toProductEntity(Product product) {
         return ProductEntity.builder()
-                .id(product.getId())
+                .id(Long.parseLong(product.getId()))
                 .externalId(product.getExternalId())
                 .name(product.getName())
                 .price(product.getPrice())

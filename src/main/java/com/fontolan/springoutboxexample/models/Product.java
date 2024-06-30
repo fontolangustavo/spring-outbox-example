@@ -6,7 +6,7 @@ import lombok.Data;
 @Builder
 @Data
 public class Product {
-    private Long id;
+    private String id;
     private String externalId;
     private String name;
     private double price;

@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
 @Slf4j
+@Service
 public class ListenerSQLServer {
     private final ProductRequestUpdateRepository productRequestUpdateRepository;
     private final ProductRepository productRepository;

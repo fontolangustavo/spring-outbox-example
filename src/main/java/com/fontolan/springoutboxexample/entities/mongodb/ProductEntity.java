@@ -10,7 +10,7 @@ import java.time.ZonedDateTime;
 @Document(collection = "products")
 public class ProductEntity {
     @Id
-    private Long id;
+    private String id;
     private String externalId;
     private String name;
     private double price;
