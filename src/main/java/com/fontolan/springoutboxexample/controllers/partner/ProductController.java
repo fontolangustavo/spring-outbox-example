@@ -7,6 +7,7 @@ import com.fontolan.springoutboxexample.controllers.partner.response.ProductResp
 import com.fontolan.springoutboxexample.models.Product;
 import com.fontolan.springoutboxexample.usecases.CreateProductUseCase;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController("partner-products")
 public class ProductController {
     private final CreateProductUseCase createProductUseCase;
+    @Qualifier("partner.product-mapper")
     private final ProductMapper productMapper;
 
     public ProductController(CreateProductUseCase createProductUseCase, ProductMapper productMapper) {

@@ -6,12 +6,10 @@ import com.fontolan.springoutboxexample.repositories.sqlserver.ProductRepository
 import com.fontolan.springoutboxexample.usecases.GetAllProductUseCase;
 import com.fontolan.springoutboxexample.usecases.mapper.sqlserver.ProductEntityMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
-@Primary
 @Component("sqlserver-get-all-products-use-case")
 public class GetAllProductUseCaseImpl implements GetAllProductUseCase {
     @Qualifier("sqlserver-products")

@@ -1,7 +1,7 @@
 package com.fontolan.springoutboxexample.controllers.admin;
 
-import com.fontolan.springoutboxexample.controllers.partner.mapper.ProductMapper;
-import com.fontolan.springoutboxexample.controllers.partner.response.ProductResponse;
+import com.fontolan.springoutboxexample.controllers.admin.mapper.ProductMapper;
+import com.fontolan.springoutboxexample.controllers.admin.response.ProductResponse;
 import com.fontolan.springoutboxexample.models.Product;
 import com.fontolan.springoutboxexample.usecases.ApproveProductRequestUpdateUseCase;
 import com.fontolan.springoutboxexample.usecases.GetAllProductUseCase;
@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.*;
 public class ProductController {
     private final ApproveProductRequestUpdateUseCase approveProductRequestUpdateUseCase;
     private final ProcessProductRequestUpdateUseCase processProductRequestUpdateUseCase;
-    @Qualifier("sqlserver-get-all-products-use-case")
     private final GetAllProductUseCase getAllProductUseCase;
-    @Qualifier("sqlserver-product-mapper")
     private final ProductMapper productMapper;
 
     public ProductController(
         ApproveProductRequestUpdateUseCase approveProductRequestUpdateUseCase,
         ProcessProductRequestUpdateUseCase processProductRequestUpdateUseCase,
+        @Qualifier("sqlserver-get-all-products-use-case")
         GetAllProductUseCase getAllProductUseCase,
+        @Qualifier("admin.product-mapper")
         ProductMapper productMapper
     ) {
         this.approveProductRequestUpdateUseCase = approveProductRequestUpdateUseCase;

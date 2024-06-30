@@ -1,11 +1,11 @@
-package com.fontolan.springoutboxexample.controllers.partner.mapper;
+package com.fontolan.springoutboxexample.controllers.customer.mapper;
 
-import com.fontolan.springoutboxexample.controllers.partner.request.ProductRequest;
-import com.fontolan.springoutboxexample.controllers.partner.response.ProductResponse;
+import com.fontolan.springoutboxexample.controllers.customer.request.ProductRequest;
+import com.fontolan.springoutboxexample.controllers.customer.response.ProductResponse;
 import com.fontolan.springoutboxexample.models.Product;
 import org.springframework.stereotype.Component;
 
-@Component("partner.product-mapper")
+@Component("customer.product-mapper")
 public class ProductMapper {
     public Product toProduct(ProductRequest request) {
         return Product.builder()
