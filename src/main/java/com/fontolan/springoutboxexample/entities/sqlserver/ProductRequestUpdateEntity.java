@@ -19,6 +19,8 @@ public class ProductRequestUpdateEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "productId")
     private ProductEntity product;
     private String oldData;
     private String newData;
