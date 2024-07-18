@@ -40,6 +40,7 @@ public class ProductRequestUpdateEntityMapper {
         if (requestUpdate.getProduct() != null) {
             productRequestUpdate.setProduct(
                 ProductEntity.builder()
+                    .id(Long.parseLong(requestUpdate.getProduct().getId()))
                     .externalId(requestUpdate.getProduct().getExternalId())
                     .name(requestUpdate.getProduct().getName())
                     .price(requestUpdate.getProduct().getPrice())
